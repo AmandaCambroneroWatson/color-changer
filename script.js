@@ -1,18 +1,37 @@
-const colorChanger = document.getElementById("colorChanger");
+  const colorChanger = document.getElementById("colorChanger");
   const colors = ["HotPink", "LightPink", "Crimson"];
+  const originalColor = "black";
 
-function randomColor(colors) {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
-colorChanger.addEventListener('click', () => {
-   const newColor = randomColor(colors);
-
-   document.body.style.backgroundColor = newColor;
-   colorChanger.textContent = `Color: ${newColor}`;
   
-   console.log(newColor);
+let currentIndex = 0;
+
+colorChanger.addEventListener("click", () => {
+  if (currentIndex < colors.length) {
+    const newColor = colors[currentIndex];
+    document.body.style.backgroundColor = newColor;
+    colorChanger.textContent = `Color: ${newColor}`;
+    console.log(newColor);
+    currentIndex++;
+  } else {
+    document.body.style.backgroundColor = originalColor;
+    colorChanger.textContent = "Change Color";
+    console.log("Back to original");
+    currentIndex = 0; 
+  }
 });
+
+// function randomColor(colors) {
+//   return colors[Math.floor(Math.random() * colors.length)];
+// }
+
+// colorChanger.addEventListener('click', () => {
+//    const newColor = randomColor(colors);
+
+//    document.body.style.backgroundColor = newColor;
+//    colorChanger.textContent = `Color: ${newColor}`;
+  
+//    console.log(newColor);
+// });
 
 
 // function randomColor(arr) {
@@ -34,3 +53,4 @@ colorChanger.addEventListener('click', () => {
 //     }
 //     isOriginal = !isOriginal;
 //   });
+
