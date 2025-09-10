@@ -1,26 +1,38 @@
 body {
   font-family: Arial, sans-serif;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  color: white;
   background-color: #000000;
+  font-size: 25px;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 button {
   background-color: #808080;
-  border-radius: 4px;
   border: none;
   color: white;
-  padding: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
+
+}
+
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
 button:hover {
